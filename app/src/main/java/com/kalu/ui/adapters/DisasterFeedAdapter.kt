@@ -1,11 +1,11 @@
-package com.kalu.disaster_alarm
+package com.kalu.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.kalu.disaster_alarm.databinding.DisasterBinding
+import com.kalu.ui.databinding.DisasterBinding
 import com.kalu.models.Disaster
 
 class DisasterFeedAdapter :

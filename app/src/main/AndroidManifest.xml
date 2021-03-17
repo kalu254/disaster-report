@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kalu.disaster_alarm">
+    package="com.kalu.ui">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DisasterAlarm">
         <activity
-            android:name=".MainActivity"
+            android:name="com.kalu.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.DisasterAlarm.NoActionBar">
             <intent-filter>

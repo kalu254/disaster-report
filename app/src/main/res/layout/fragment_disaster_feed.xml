@@ -6,7 +6,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisasterFeedFragment">
+    tools:context=".screens.DisasterFeedFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tool_bar"
@@ -41,6 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tool_bar"
         app:layout_constraintVertical_bias="0.0"
+        android:clipToPadding="false"
         tools:listitem="@layout/disaster" />
 
 

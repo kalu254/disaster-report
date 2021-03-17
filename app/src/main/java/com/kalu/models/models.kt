@@ -21,3 +21,16 @@ data class Disaster(
     val disaster_img_url_four: String,
 )
 
+data class UserAuthorization(
+    val username: String,
+    val password: String
+)
+
+data class LoginResponse(
+    val accessToken: String,
+    val email: String,
+    val id: Int,
+    val roles: List<String>,
+    val tokenType: String,
+    val username: String
+)

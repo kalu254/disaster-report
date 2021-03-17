@@ -1,4 +1,4 @@
-package com.kalu.disaster_alarm
+package com.kalu.ui
 
 import org.junit.Test
 
