@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_disaster_feed">
+
+    <fragment
+        android:id="@+id/navigation_disaster_feed"
+        android:name="com.kalu.ui.screens.feed.DisasterFeedFragment"
+        android:label="@string/disasters"
+        tools:layout="@layout/fragment_disaster_feed" >
+        <action
+            android:id="@+id/action_SecondFragment_to_disasterDetails"
+            app:destination="@id/navigation_disaster_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_disaster_details"
+        android:name="com.kalu.ui.screens.disaster_details.DisasterDetails"
+        android:label="DisasterDetails"
+        tools:layout="@layout/fragment_disaster_details">
+        <argument
+            android:name="selectedDisaster"
+            app:argType="com.kalu.models.Disaster"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.kalu.ui.screens.account.NotificationsFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_account" />
+
+
+
+</navigation>

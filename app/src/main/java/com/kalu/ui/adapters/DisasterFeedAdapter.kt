@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kalu.ui.databinding.DisasterBinding
 import com.kalu.models.Disaster
 
-class DisasterFeedAdapter :
+class DisasterFeedAdapter ( val onClickListener: OnClickListener):
     ListAdapter<Disaster, DisasterFeedAdapter.DisasterViewHolder>(DisasterCallBack()) {
 
 
@@ -18,12 +18,15 @@ class DisasterFeedAdapter :
 
     override fun onBindViewHolder(holder: DisasterViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(item, position)
+        holder.itemView.setOnClickListener{
+            onClickListener.onClick(item)
+        }
+        holder.bind(item)
     }
 
     class DisasterViewHolder(val binding: DisasterBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Disaster, position: Int) {
+        fun bind(item: Disaster) {
             binding.disaster = item
             binding.executePendingBindings()
         }
@@ -37,6 +40,11 @@ class DisasterFeedAdapter :
         }
 
     }
+
+
+    class OnClickListener(val clickListener: (disaster:Disaster) -> Unit) {
+        fun onClick(disaster: Disaster) = clickListener(disaster)
+    }
 }
 
 class DisasterCallBack : DiffUtil.ItemCallback<Disaster>() {
@@ -47,4 +55,6 @@ class DisasterCallBack : DiffUtil.ItemCallback<Disaster>() {
     override fun areContentsTheSame(oldItem: Disaster, newItem: Disaster): Boolean {
         return oldItem == newItem
     }
+
+
 }

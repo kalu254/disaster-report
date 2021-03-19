@@ -11,8 +11,11 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- bottm nav bar -->
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+
     </style>
+
 
     <style name="Theme.DisasterAlarm.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -53,7 +56,7 @@
     </style>
 
     <style name="modifiedEditText" parent="parent">
-        <item name="android:textSize">@dimen/newsMoreTextSize</item>
+        <item name="android:textSize">@dimen/normalTextSize</item>
         <item name="android:backgroundTint">@color/white</item>
     </style>
 
@@ -70,5 +73,17 @@
     </style>
 
 
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
 
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorPrimary">#FB0366</item>
+        <item name="colorOnPrimary">@color/red_accent</item>
+    </style>
+
+    <style name="myCustomMenuTextAppearance" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:icon">@color/black</item>
+    </style>
 </resources>

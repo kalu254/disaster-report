@@ -6,13 +6,13 @@
     <data>
         <variable
             name="login"
-            type="com.kalu.ui.screens.LoginFragment" />
+            type="com.kalu.ui.screens.login.LoginFragment" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screens.LoginFragment">
+        tools:context=".screens.login.LoginFragment">
 
         <ScrollView
             style="@style/parent"
@@ -87,7 +87,7 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/forgot_password"
                         android:textColor="@color/teal_700"
-                        android:textSize="@dimen/newsMoreTextSize" />
+                        android:textSize="@dimen/normalTextSize" />
 
                     <Button
                         android:id="@+id/btn_log_in"

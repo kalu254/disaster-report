@@ -1,6 +1,6 @@
 package com.kalu.ui.view_models
 
-import android.util.Log
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +13,10 @@ import kotlinx.coroutines.launch
 enum class TanaApiStatus { LOADING, ERROR, DONE }
 
 
-class DisasterFeedViewModel(private val disasterRepository: DisasterRepository) : ViewModel() {
+
+class DisasterFeedViewModel(
+    private val disasterRepository: DisasterRepository,
+) : ViewModel() {
 
     private val _disasters : MutableLiveData<Resource<List<Disaster>>> = MutableLiveData()
     val disasters: MutableLiveData<Resource<List<Disaster>>>
@@ -22,6 +25,19 @@ class DisasterFeedViewModel(private val disasterRepository: DisasterRepository) 
     private val _status = MutableLiveData<TanaApiStatus>()
     val status: LiveData<TanaApiStatus>
         get() = _status
+
+    private val _navigateToSelectedDisaster = MutableLiveData<Disaster?>()
+
+    val navigateToSelectedDisaster: MutableLiveData<Disaster?>
+        get() = _navigateToSelectedDisaster
+
+    fun displayDisasterDetails(disaster: Disaster) {
+        _navigateToSelectedDisaster.value = disaster
+    }
+
+    fun displayDisasterDetailsComplete() {
+        _navigateToSelectedDisaster.value = null
+    }
 
 
     suspend fun getAllDisasters() {

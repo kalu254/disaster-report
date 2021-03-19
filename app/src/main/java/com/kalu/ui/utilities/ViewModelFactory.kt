@@ -1,15 +1,18 @@
-package com.kalu.ui.base
+package com.kalu.ui.utilities
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.kalu.repository.AuthRepository
 import com.kalu.repository.DisasterRepository
-import com.kalu.ui.view_models.AuthViewModel
+import com.kalu.ui.screens.login.AuthViewModel
 import com.kalu.ui.view_models.DisasterFeedViewModel
 import java.lang.IllegalArgumentException
 
 @Suppress("UNCHECKED_CAST")
-class ViewModelFactory(private val repository: Any?) : ViewModelProvider.NewInstanceFactory(){
+class ViewModelFactory(
+    private val repository: Any?,
+    ) : ViewModelProvider.NewInstanceFactory(){
+
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when {

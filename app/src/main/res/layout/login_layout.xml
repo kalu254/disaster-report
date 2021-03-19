@@ -50,7 +50,7 @@
             style="@style/viewParent"
             android:text="Forgot Password?"
             android:textColor="@color/primaryTextColor"
-            android:textSize="@dimen/newsMoreTextSize"
+            android:textSize="@dimen/normalTextSize"
             android:layout_gravity="end"
             android:onClick="viewForgotPAssword"
             android:layout_marginTop="10dp"/>

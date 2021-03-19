@@ -18,5 +18,8 @@
 
     <!--colros for card-->
     <color name="whiteCardColor">#fff</color>
+    <color name="red">#FB0303</color>
+    <color name="red_accent">#BC2929</color>
+
 
 </resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kalu.ui.screens.disaster_details.DisasterDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.disaster_details.DisasterDetails">
+
+        <ImageView
+            android:id="@+id/img_main"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:contentDescription="@string/disaster_img_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setDisasterImage="@{viewModel.selectedDisaster.disaster_img_url_one}"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager_disaster_images"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_main" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pager_disaster_images">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_village"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/top_margin"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginRight="@dimen/left_margin"
+                        android:text="@{viewModel.selectedDisaster.village}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_label_village"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/top_margin"
+                        android:layout_marginRight="@dimen/left_margin"
+                        android:text="@{viewModel.selectedDisaster.date_reported}"
+                        app:layout_constraintEnd_toEndOf="@+id/txt_village"
+                        app:layout_constraintStart_toEndOf="@+id/txt_label_date"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_label_village"
+                        app:layout_goneMarginTop="@dimen/top_margin" />
+
+                    <TextView
+                        android:id="@+id/txt_disaster_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/top_margin"
+                        android:text="@{viewModel.selectedDisaster.disaster_type}"
+                        app:layout_constraintEnd_toEndOf="@+id/txt_date"
+                        app:layout_constraintStart_toEndOf="@+id/txt_label_type"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_label_date" />
+
+                    <TextView
+                        android:id="@+id/txt_disaster_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/top_margin"
+                        android:layout_marginLeft="@dimen/left_margin"
+                        android:layout_marginTop="@dimen/left_margin"
+                        android:layout_marginRight="@dimen/left_margin"
+                        android:text="@{viewModel.selectedDisaster.disaster_description}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_label_disaster_desc" />
+
+                    <TextView
+                        android:id="@+id/txt_label_village"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/top_margin"
+                        android:layout_marginLeft="@dimen/left_margin"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/village"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_label_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/top_margin"
+                        android:text="@string/date"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/txt_label_village"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_label_village" />
+
+                    <TextView
+                        android:id="@+id/txt_label_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23dp"
+                        android:layout_marginVertical="@dimen/top_margin"
+                        android:text="@string/type"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/txt_label_date"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_label_date" />
+
+                    <TextView
+                        android:id="@+id/txt_label_disaster_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/left_margin"
+                        android:text="@string/desc"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/txt_disaster_type"
+                        app:layout_constraintStart_toStartOf="@+id/txt_label_type"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_label_type" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

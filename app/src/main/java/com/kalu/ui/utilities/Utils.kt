@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.kalu.network.Resource
-import com.kalu.ui.screens.LoginFragment
+import com.kalu.ui.screens.login.LoginFragment
 
 fun <A : Activity> Activity.startNewActivity(activity: Class<A>) {
     Intent(this, activity).also {

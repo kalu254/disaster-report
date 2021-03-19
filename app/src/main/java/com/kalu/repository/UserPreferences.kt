@@ -26,6 +26,8 @@ class UserPreferences(
         }
     }
 
+//    suspend fun saveUser(user)
+
     suspend fun clear() {
         dataStore.edit { preferences ->
             preferences.clear()

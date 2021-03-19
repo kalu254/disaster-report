@@ -1,4 +1,4 @@
-package com.kalu.ui.view_models
+package com.kalu.ui.screens.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

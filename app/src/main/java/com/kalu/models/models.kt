@@ -1,5 +1,8 @@
 package com.kalu.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 data class User (
     val id : String,
     val f_name : String,
@@ -9,6 +12,8 @@ data class User (
     val phone_number : Int,
     val password : String,
 )
+
+@Parcelize
 data class Disaster(
     val disaster_id: String,
     val date_reported: String,
@@ -19,7 +24,7 @@ data class Disaster(
     val disaster_img_url_two: String,
     val disaster_img_url_three: String,
     val disaster_img_url_four: String,
-)
+) : Parcelable
 
 data class UserAuthorization(
     val username: String,
@@ -34,3 +39,5 @@ data class LoginResponse(
     val tokenType: String,
     val username: String
 )
+
+data class ImageItem(val imageUrl : String)

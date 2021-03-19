@@ -19,11 +19,9 @@ fun TextView.setDisasterDescription(item: Disaster){
 }
 
 @BindingAdapter("setDisasterImage")
-fun setDisasterImage(disasterImg: ImageView, item: Disaster){
+fun setDisasterImage(disasterImg: ImageView, url: String){
 
-    item.disaster_img_url_one.let {
-        val uri = it.toUri().buildUpon().scheme("https").build()
-        Log.d("cheki image", uri.toString())
+        val uri = url.toUri().buildUpon().scheme("https").build()
         Glide.with(disasterImg.context)
             .load(uri)
             .apply(
@@ -32,7 +30,6 @@ fun setDisasterImage(disasterImg: ImageView, item: Disaster){
                     .error(R.drawable.ic_broken_image)
             )
             .into(disasterImg)
-    }
 }
 
 

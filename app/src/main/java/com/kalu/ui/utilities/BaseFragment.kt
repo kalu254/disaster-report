@@ -1,4 +1,4 @@
-package com.kalu.ui.base
+package com.kalu.ui.utilities
 
 import android.os.Bundle
 import android.view.LayoutInflater
