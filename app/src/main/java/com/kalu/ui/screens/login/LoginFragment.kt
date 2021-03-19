@@ -39,7 +39,7 @@ class LoginFragment : BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepo
         viewModel.user.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is Resource.Success -> {
-                        viewModel.saveAuthToken(it.value.accessToken)
+                        viewModel.saveLoginDetails(it.value)
                     val intent = Intent (activity, Home::class.java)
                     activity?.startActivity(intent)
                     binding.progressCircularLoggingIn.visible(false)

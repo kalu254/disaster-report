@@ -2,6 +2,7 @@ package com.kalu.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+import kotlinx.coroutines.flow.Flow
 
 data class User (
     val id : String,
@@ -41,3 +42,5 @@ data class LoginResponse(
 )
 
 data class ImageItem(val imageUrl : String)
+
+data class UserProfile(val id: Int?, val username: String?, val email_address: String?)

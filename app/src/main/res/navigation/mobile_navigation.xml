@@ -28,10 +28,9 @@
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.kalu.ui.screens.account.NotificationsFragment"
+        android:name="com.kalu.ui.screens.account.AccountsFragment"
         android:label="@string/account"
         tools:layout="@layout/fragment_account" />
-
 
 
 </navigation>

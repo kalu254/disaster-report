@@ -20,7 +20,9 @@ class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
         _user.value = repository.login(userAuthorization)
     }
 
-    fun saveAuthToken(token : String) = viewModelScope.launch {
-        repository.saveToken(token)
+    fun saveLoginDetails(value: LoginResponse) = viewModelScope.launch {
+        repository.saveToken(value.accessToken)
+        repository.saveUser(value.id,value.username,value.email)
     }
+
 }
