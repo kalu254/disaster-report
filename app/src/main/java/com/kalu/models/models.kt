@@ -44,3 +44,11 @@ data class LoginResponse(
 data class ImageItem(val imageUrl : String)
 
 data class UserProfile(val id: Int?, val username: String?, val email_address: String?)
+
+data class DisasterPayload(
+    val date_reported: String,
+    val disaster_description: String,
+    val disaster_type: String,
+    val user: UserProfile,
+    val village: String
+)

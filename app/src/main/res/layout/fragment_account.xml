@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/ic_login_bk"
-            android:backgroundTint="@color/red"
+            android:backgroundTint="@color/teal_200"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,7 @@
             android:id="@+id/profile_image"
             android:layout_width="196dp"
             android:layout_height="196dp"
-            android:layout_marginTop="136dp"
+            android:layout_marginTop="76dp"
             android:src="@drawable/luka"
             app:civ_border_color="@color/red_accent"
             app:civ_border_width="2dp"
@@ -41,23 +41,24 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="48dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_image">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:padding="30dp">
 
                 <TextView
                     android:id="@+id/txt_label_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="32dp"
                     android:text="@string/id"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -66,12 +67,11 @@
                     android:id="@+id/txt_user_id"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="8dp"
                     android:text="@{String.valueOf(viewmodel.userProfile.id)}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/txt_label_id"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@+id/txt_label_id" />
 
                 <TextView
                     android:id="@+id/txt_label_username"
@@ -86,8 +86,8 @@
                     android:id="@+id/txt_username"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
                     android:text="@{viewmodel.userProfile.username}"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/txt_label_username"
                     app:layout_constraintTop_toTopOf="@+id/txt_label_username" />
 
@@ -104,8 +104,8 @@
                     android:id="@+id/txt_user_email_address"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
                     android:text="@{viewmodel.userProfile.email_address}"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/txt_label_email_address"
                     app:layout_constraintTop_toTopOf="@+id/txt_label_email_address" />
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,4 +32,10 @@
     <string name="id">Id:\u0020\u0020</string>
     <string name="username">Username:\u0020\u0020</string>
     <string name="email">Email:\u0020\u0020</string>
+
+    <string-array name="disaster_types">
+        <item>Natural</item>
+        <item>Man-Made</item>
+    </string-array>
+
 </resources>

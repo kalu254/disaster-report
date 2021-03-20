@@ -31,6 +31,11 @@
         android:name="com.kalu.ui.screens.account.AccountsFragment"
         android:label="@string/account"
         tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/navigation_report_disaster"
+        android:name="com.kalu.ui.screens.report.ReportDisaster"
+        tools:layout="@layout/report_disaster_fragment" />
+
 
 
 </navigation>
